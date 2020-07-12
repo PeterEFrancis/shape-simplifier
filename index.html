@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shape Simplifier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="saved.js"></script>
+
+		<style>
+			html {
+				min-width: 150px;
+			}
+
+			canvas {
+				width: 100%;
+				background-color: white;
+				border: 1px solid black;
+			}
+
+			p {
+				font-size: 12pt;
+			}
+
+			button {
+				margin-bottom: 10px !important;
+			}
+
+		</style>
+	</head>
+	<body onload="clear_display()">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1 class="text-center" style="margin-bottom:20px;">Shape Simplification</h1>
+					<canvas id="display" class="center-block" width="1000" height="1000">
+						HTML Canvas element is not supported on your device and/or borwser.
+					</canvas>
+					<p id="alert" style="color:red; margin-bottom: 20px;">&emsp;</p>
+					<div class="text-center" style="margin-bottom: 40px;">
+						<button class="btn btn-default btn-lg" onclick="clear_display()">Clear</button>
+						<input type="range" id="slider" min="3" max="4" value="10"></input>
+					</div>
+					<p>Click to place points. Then set the points and move the slider to show the simplification.</p>
+					<p class="text-center" style="margin-top:40px;">
+						&#169; 2020 <a href="https://PeterEFrancis.com" target="_blank"><u>Peter E. Francis</u></a>
+					</p>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+		<script src="engine.js"></script>
+	</body>
+</html>

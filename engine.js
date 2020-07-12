@@ -116,7 +116,15 @@ function reduce() {
 
 function export_points() {
 	document.getElementById('export').innerHTML = JSON.stringify(points);
-	document.getElementById('export').rows = Math.min(300, points.length);
+	document.getElementById('export').rows = Math.min(10, points.length);
+}
+
+function copy_export() {
+	var copyText = document.getElementById("export");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	document.getElementById("copy-confirm").innerHTML = "Copied to clipboard!";
 }
 
 function simplify_to(n) {

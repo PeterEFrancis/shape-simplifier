@@ -28,12 +28,25 @@ function remove_obj_from_arr(obj, arr) {
 }
 
 
+function alredy_containes(point) {
+	for (var i = 0; i < points.length; i++) {
+		if (point.x == points[i].x && point.y == points[i].y) {
+			return true;
+		}
+	}
+	return false;
+}
+
+
 function click(x, y) {
 	if (can_interact) {
-		points.push({x:x, y:y});
-		saved_points.push({x:x, y:y});
-		document.getElementById('slider').max = points.length;
-		document.getElementById('slider').value = points.length;
+		var new_point = {x:x, y:y};
+		if (!alredy_containes(new_point)) {
+			points.push(new_point);
+			saved_points.push(new_point);
+			document.getElementById('slider').max = points.length;
+			document.getElementById('slider').value = points.length;
+		}
 	}
 }
 

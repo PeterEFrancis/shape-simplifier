@@ -13,6 +13,8 @@ var can_interact;
 function clear_display() {
 	can_interact = true;
 	load([]);
+	document.getElementById('preset_options').selectedIndex = 0;
+
 }
 
 function load(p) {

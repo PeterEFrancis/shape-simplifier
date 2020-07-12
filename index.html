@@ -40,11 +40,18 @@
 						HTML Canvas element is not supported on your device and/or borwser.
 					</canvas>
 					<p id="alert" style="color:red; margin-bottom: 20px;">&emsp;</p>
-					<div class="text-center" style="margin-bottom: 40px;">
+					<div class="text-center" style="margin-bottom: 20px;">
 						<button class="btn btn-default btn-lg controls" onclick="clear_display()">Clear</button>
 						<button class="btn btn-default btn-lg controls" onclick="export_points();" data-toggle="modal" data-target="#modal">Export</button>
-						<input type="range" id="slider" min="3" max="4" value="10" step="1"></input>
+						<select id="shape" class="btn btn-lg btn-default controls" onchange="load(PRESETS[Number(this.value)])">
+							<option value="0">--load Preset--</option>
+							<option value="1">Lion</option>
+							<option value="2">Tree</option>
+						</select>
 					</div>
+
+					<input type="range" id="slider" min="3" max="4" value="10" step="1" style="margin-bottom: 20px;"></input>
+
 					<p>Click to place points. Then set the points and move the slider to show the simplification.</p>
 					<p class="text-center" style="margin-top:40px;">
 						&#169; 2020 <a href="https://PeterEFrancis.com" target="_blank"><u>Peter E. Francis</u></a>

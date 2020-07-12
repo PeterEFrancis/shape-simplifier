@@ -2,6 +2,8 @@
 const canvas = document.getElementById("display");
 const ctx = canvas.getContext("2d");
 
+const PRESETS = [[], lion, tree];
+
 
 var saved_points;
 var points;
@@ -10,15 +12,17 @@ var can_interact;
 
 function clear_display() {
 	can_interact = true;
-	set([]);
+	load([]);
 }
 
-function set(p) {
+function load(p) {
 	points = [...p];
 	saved_points = [...p];
 	document.getElementById('slider').max = points.length;
 	document.getElementById('slider').value = points.length;
 }
+
+
 
 function remove_obj_from_arr(obj, arr) {
 	var index = arr.indexOf(obj);

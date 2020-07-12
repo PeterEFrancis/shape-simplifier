@@ -42,6 +42,7 @@ function update() {
 
 	simplify_to(Number(document.getElementById('slider').value));
 
+
 	ctx.clearRect(0,0,canvas.width, canvas.height);
 
 	ctx.fillStyle = "black";
@@ -113,7 +114,10 @@ function reduce() {
 	}
 }
 
-
+function export_points() {
+	document.getElementById('export').innerHTML = JSON.stringify(points);
+	document.getElementById('export').rows = Math.min(300, points.length);
+}
 
 function simplify_to(n) {
 	if (n <= saved_points.length) {
